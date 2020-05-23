@@ -6,26 +6,38 @@ body {
    position: relative;
    width: auto;
    height: 770px;
-   margin: 0;
+   border: 1px solid white;
 }
 
 .navBar {
    display: flex;
-   margin: 0 200px;
 }
 
 .navEntry {
-   flex: 1;
    text-align: center;
    letter-spacing: 0.09em;
 }
 
+#logo {
+   height: 120px;
+   min-width: 180px;
+}
+
+h1 {
+   margin: 0;
+}
+
 .navEntry h1 {
    font-weight: 800;
-   font-size: 50px;
-   margin: 15px 0;
+   font-size: 40px;
+   margin: 25px 60px;
    vertical-align: middle;
+}
+
+.navEntry h1:hover {
    cursor: pointer;
+   color: rgba(48, 253, 157, 0.877);
+   text-decoration: underline;
 }
 
 .title {
@@ -38,7 +50,7 @@ body {
    line-height: 110px;
    letter-spacing: 0.09em;
 
-   text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.4);
+   /* text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.4); */
 }
 
 h2 {
@@ -49,10 +61,10 @@ h2 {
    font-size: 40px;
    line-height: 40px;
 
-   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+   /* text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4); */
 }
 
-.svgdiv {
+#dominos {
    position: absolute;
    left: 0;
    top: 0;
@@ -67,37 +79,65 @@ svg {
    overflow: visible;
 }
 
+.column {
+   display: flex;
+   flex-direction: column;
+
+   margin-top: 50px;
+}
+
 .heading {
-   text-align: center;
+   margin-bottom: 50px;
 }
 
 .heading h1 {
-   margin: 0;
-   margin-bottom: 100px;
+   width: 500px;
+   margin: 0 auto;
    font-weight: 700;
    font-size: 80px;
+   line-height: 80px;
+   text-align: center;
 }
 
-.text {
-   text-align: left;
-   width: 1000px;
+.heading svg {
+   width: 500px;
+   height: 80px;
    margin: 0 auto;
 }
 
+.text {
+   max-width: 920px;
+   margin: 0 auto;
+   margin-bottom: 40px;
+}
+
+p {
+   margin: 0;
+}
+
 .text p {
+   margin: 0 50px;
    font-family: 'Roboto', sans-serif;
    font-size: 30px;
    font-weight: 300;
+   text-align: left;
    letter-spacing: 0.2em;
+}
 
-   margin: 0;
+#blocks {
+   height: 100px;
+   width: 800px;
+   margin: 100px auto 0 auto;
 }
 
 .row {
    display: flex;
-   width: 1000px;
    margin: 0 auto;
-   margin-bottom: 50px;
+}
+
+.activities {
+   width: 1000px;
+   margin-bottom: 40px;
 }
 
 .child {
@@ -108,14 +148,80 @@ svg {
 }
 
 .child svg {
-   width: 210px;
+   width: 200px;
    height: 160px;
    cursor: pointer;
    /* border: 1px solid blue; */
 }
 
 .child h2 {
-   flex: 1;
    font-size: 50px;
    /* border: 1px solid violet; */
 }
+
+.activityHeading {
+   align-items: center;
+   justify-content: center;
+   margin-top: 60px;
+   margin-bottom: 40px;
+}
+
+.activityHeading svg {
+   width: 200px;
+   height: 170px;
+}
+
+.activityHeading h1 {
+   font-size: 100px;
+}
+
+.date {
+   margin: 12px auto;
+}
+
+.date p {
+   font: 700 55px 'Chathura';
+   line-height: 80px;
+   letter-spacing: 0.09em;
+   padding: 0 55px;
+   border-radius: 25px;
+   cursor: pointer;
+}
+
+#red p {
+   color: #FF6B6B;
+   border: 3px solid #FF6B6B;
+}
+
+#purple p {
+   color: #C853FF;
+   border: 3px solid #C853FF;
+}
+
+#blue p {
+   color: #6B95FF;
+   border: 3px solid #6B95FF;
+}
+
+#green p {
+   color: #88FF75;
+   border: 3px solid #88FF75;
+}
+
+.svgdiv {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -2;
+}
+
+
+
+.noselect {
+   -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+ }
