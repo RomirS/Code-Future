@@ -7,10 +7,11 @@ head
   link(href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;800&display=swap" rel="stylesheet")
   link(href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&display=swap" rel="stylesheet")
   link(href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
   title Code Future
 
 .frame
-  .navBar
+  .navBar.center
     .navEntry#logo
       <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222 156">
         <g filter="url(#bgshadow_d)">
@@ -212,6 +213,28 @@ head
       p.noselect Upcoming Dates
     .date
       p.noselect Upcoming Dates
+.frame
+  .heading.column
+    h1 Join Us
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 93">
+      <path d="M111.088 54.744a3 3 0 013-3H137a3 3 0 013 3v18.871a3 3 0 01-3 3h-22.912a3 3 0 01-3-3V54.744z" fill="url(#pp0_linear)"/>
+      <rect x="193" y="67.744" width="28.912" height="24.872" rx="3" fill="url(#pp1_linear)"/>
+      <rect x="493" y="51.744" width="28.912" height="24.872" rx="3" fill="url(#pp2_linear)"/>
+      <rect x="400" y="63.744" width="28.912" height="24.872" rx="3" fill="url(#pp3_linear)"/>
+      <path d="M5 0h582a5 5 0 015 5v1.333a5 5 0 01-5 5h-44.5V27.5a5 5 0 01-5 5h-19a5 5 0 01-5-5V25H475v13.5a5 5 0 01-5 5h-19a5 5 0 01-5-5V25h-19.716a5 5 0 00-5 5v3.333a5 5 0 01-5 5h-52.642a5 5 0 00-5 5V74.5a5 5 0 01-5 5H334.5a5 5 0 01-5-5V60h-40.891a5 5 0 01-5-5V43.333a5 5 0 00-5-5H265.5V54.5a5 5 0 01-5 5H242a5 5 0 01-5-5V38.333h-36.502a5 5 0 01-5-5V30a5 5 0 00-5-5H173.5v11a5 5 0 01-5 5h-19a5 5 0 01-5-5V25h-30.737a5 5 0 01-5-5v-3.667a5 5 0 00-5-5H83.5V26.5a5 5 0 01-5 5H59.381a5 5 0 01-5-5V11.333H5a5 5 0 01-5-5V5a5 5 0 015-5z" fill="url(#pp4_linear)"/>
+    </svg>
+  .text.center
+    p Fill out the form below to let us know we’re expecting you!
+  form#signup(action="submitFormData" method="post")
+    .row
+      input#first(type='text' name='first' placeholder='First Name' required)
+      input#email(type='text' name='email' placeholder='Email' required)
+    .row
+      input#actnum(type='number' name='actnum' min='1' max='4' placeholder='Activity #' required)
+      input#date(type='date' name='date' placeholder='Date of activity' required)
+    .row
+      input(type='submit')
+  #formMessages
 
 
 .svgdiv

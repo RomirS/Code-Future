@@ -14,8 +14,11 @@ body {
 }
 
 .navEntry {
-   text-align: center;
    letter-spacing: 0.09em;
+}
+
+.center {
+   text-align: center;
 }
 
 #logo {
@@ -120,7 +123,6 @@ p {
    font-family: 'Roboto', sans-serif;
    font-size: 30px;
    font-weight: 300;
-   text-align: left;
    letter-spacing: 0.2em;
 }
 
@@ -206,6 +208,43 @@ p {
 #green p {
    color: #88FF75;
    border: 3px solid #88FF75;
+}
+
+#signup {
+   margin: 0 auto;
+   width: 800px;
+}
+
+#signup input {
+   all: unset;
+
+   flex: 1;
+   margin: 20px;
+
+   padding: 20px;
+   font: 300 30px 'Roboto';
+   background: #F6F2F2;
+   border-radius: 15px;
+}
+
+input[type=date]:invalid::-webkit-datetime-edit {
+   color: #838383;
+}
+
+#signup input[type='submit'] {
+   all: unset;
+
+   margin: 20px auto;
+
+   padding: 10px 50px;
+   font-size: 30px;
+   font-weight: 800;
+   letter-spacing: 0.09em;
+   color: white;
+   background: #FF6767;
+   border-radius: 25px;
+
+   cursor: pointer;
 }
 
 .svgdiv {
