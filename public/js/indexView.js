@@ -1,34 +1,25 @@
-// $(function() {
-//     var form = $('#signup');
-//     var formMessages = $('#formMessages');
+$('button').each(function() {
+    $(this).click(function() {
+       scrollTo(this.innerHTML.toLowerCase().replace(/\s/g, ''));
+    });
+});
 
-//     $(form).submit(e => {
-//         e.preventDefault();
-    
-//         var formData = $(form).serialize();
-//         $.ajax({
-//             type: 'POST',
-//             url: $(form).attr('action'),
-//             data: formData
-//         }).done(response => {
-//             $(formMessages).removeClass('error');
-//             $(formMessages).addClass('success');
-        
-//             $(formMessages).text(response);
-        
-//             $('#first').val('');
-//             $('#last').val('');
-//             $('#actnum').val('');
-//             $('#date').val('');
-//         }).fail(data => {
-//             $(formMessages).removeClass('success');
-//             $(formMessages).addClass('error');
-        
-//             if (data.responseText !== '') {
-//                 $(formMessages).text(data.responseText);
-//             } else {
-//                 $(formMessages).text('Oops! An error occured when submitting.');
-//             }
-//         });
-//     });
-// });
+function scrollTo(elem) {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('#' + elem).offset().top
+    }, 600);
+}
+
+if ($(document.documentElement).scrollTop() <= 700) $('.sidebar').hide();
+var executed = false;
+$(function () {
+    $(window).scroll(function() {
+        if ($(document.documentElement).scrollTop() > 700 && !executed) {
+            $('.sidebar').fadeIn(200);
+            executed = true;
+        } else if ($(document.documentElement).scrollTop() <= 700 && executed) {
+            $('.sidebar').fadeOut(200);
+            executed = false;
+        }
+    });
+});

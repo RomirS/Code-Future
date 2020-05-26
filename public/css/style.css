@@ -2,11 +2,51 @@ body {
    font-family: 'Baloo Da 2';
 }
 
+h1 {
+   margin: 0;
+}
+
+h2 {
+   margin: 0;
+}
+
+p {
+   margin: 0;
+}
+
+button {
+   all: unset;
+}
+
+.sidebar {
+   position: fixed;
+   top: 35%;
+   left: 20px;
+   z-index: 2;
+}
+
+.sidebar button {
+   display: block;
+   margin: 5px 0;
+   padding: 10px 15px;
+   color: rgba(167, 167, 167, 0.877);
+   font: 500 20px 'Baloo Da 2';
+   line-height: 20px;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.sidebar button:hover {
+   background: rgba(238, 238, 238, 0.308);
+   font-weight: 600;
+   color: rgba(48, 253, 157, 0.877);
+}
+
 .frame {
    position: relative;
    width: auto;
    height: 770px;
-   border: 1px solid white;
+   border: 1px solid transparent;
 }
 
 .navBar {
@@ -26,21 +66,16 @@ body {
    min-width: 180px;
 }
 
-h1 {
-   margin: 0;
-}
-
-.navEntry h1 {
+.navEntry button {
    font-weight: 800;
    font-size: 40px;
    margin: 25px 60px;
    vertical-align: middle;
 }
 
-.navEntry h1:hover {
+.navEntry button:hover {
    cursor: pointer;
    color: rgba(48, 253, 157, 0.877);
-   text-decoration: underline;
 }
 
 .title {
@@ -54,10 +89,6 @@ h1 {
    letter-spacing: 0.09em;
 
    /* text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.4); */
-}
-
-h2 {
-   margin: 0;
 }
 
 .title h2 {
@@ -112,10 +143,6 @@ svg {
    max-width: 920px;
    margin: 0 auto;
    margin-bottom: 40px;
-}
-
-p {
-   margin: 0;
 }
 
 .text p {
