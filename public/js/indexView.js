@@ -66,17 +66,17 @@ $('button').each(function() {
 
 $('.child svg').each(function() {
     $(this).mousedown(function() {
-        $(this).toggleClass('bgshadow');
+        $(this).removeClass('bgshadow');
     }).mouseup(function() {
-        $(this).toggleClass('bgshadow');
+        $(this).addClass('bgshadow');
         scrollTo($(this).attr('name'));
     });
 });
 
 $('#arrow path').mousedown(function() {
-    $('#arrow').toggleClass('bgshadow');
+    $('#arrow').removeClass('bgshadow');
 }).mouseup(function() {
-    $('#arrow').toggleClass('bgshadow');
+    $('#arrow').addClass('bgshadow');
     scrollTo('mission');
 });
 
