@@ -36,18 +36,20 @@ function makeResponsive() {
     if (window.innerWidth >= 1025) {
         $('.row').css('flex-direction', 'row');
         $('.child').css('margin', '0 0 3vw 0');
+        $('.row input:text').css('width', '100%');
     } else {
         $('.row').css('flex-direction', 'column');
         $('.child').css('margin', '0 auto 3vw auto');
+        $('.row input:text').css('width', '80%');
     }
 
     $('.frame').each(function() {
         var totalHeight = 0
         $(this).children().each(function() {
-            if($(this).css('position') != 'absolute') totalHeight += $(this).outerHeight(true);
-        })
-        if( totalHeight > 770 ) $(this).css('height', 'auto')
-        else $(this).css('height', '770px')
+            if($(this).css('position') != 'absolute' && !$(this).is('iframe')) totalHeight += $(this).outerHeight(true);
+        });
+        if( totalHeight > 780 ) $(this).css('height', totalHeight)
+        else $(this).css('height', '780px')
     });
 }
 
@@ -62,12 +64,19 @@ $('button').each(function() {
     });
 });
 
-$('#arrow')[0].setAttribute('filter', 'url(svg/filters.svg#bgshadow_d)');
-$('#arrow path').mousedown(function() {
-    $('#arrow')[0].setAttribute('filter', '');
+$('.child svg').each(function() {
+    $(this).mousedown(function() {
+        $(this).toggleClass('bgshadow');
+    }).mouseup(function() {
+        $(this).toggleClass('bgshadow');
+        scrollTo($(this).attr('name'));
+    });
 });
-$('#arrow path').mouseup(function() {
-    $('#arrow')[0].setAttribute('filter', 'url(svg/filters.svg#bgshadow_d)');
+
+$('#arrow path').mousedown(function() {
+    $('#arrow').toggleClass('bgshadow');
+}).mouseup(function() {
+    $('#arrow').toggleClass('bgshadow');
     scrollTo('mission');
 });
 
