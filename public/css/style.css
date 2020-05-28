@@ -1,5 +1,6 @@
 body {
    font-family: 'Baloo Da 2';
+   overflow-x: hidden;
 }
 
 h1 {
@@ -16,6 +17,8 @@ p {
 
 button {
    all: unset;
+   cursor: pointer;
+   border-radius: 10px;
 }
 
 .sidebar {
@@ -32,8 +35,6 @@ button {
    color: rgba(167, 167, 167, 0.877);
    font: 500 20px 'Baloo Da 2';
    line-height: 20px;
-   border-radius: 10px;
-   cursor: pointer;
 }
 
 .sidebar button:hover {
@@ -44,38 +45,44 @@ button {
 
 .frame {
    position: relative;
-   width: auto;
-   height: 770px;
    border: 1px solid transparent;
 }
 
 .navBar {
    display: flex;
+   margin: 0 270px 0 20px;
+}
+
+#logo {
+   flex: 1;
+   height: 120px;
+   min-width: 160px;
 }
 
 .navEntry {
-   letter-spacing: 0.09em;
+   flex: 1;
+   min-width: 220px;
 }
 
 .center {
    text-align: center;
 }
 
-#logo {
-   height: 120px;
-   min-width: 180px;
-}
-
 .navEntry button {
    font-weight: 800;
    font-size: 40px;
-   margin: 25px 60px;
+   margin: 25px 0;
+   padding: 0 15px;
    vertical-align: middle;
 }
 
 .navEntry button:hover {
-   cursor: pointer;
+   background: rgba(238, 238, 238, 0.308);
    color: rgba(48, 253, 157, 0.877);
+}
+
+#dropdown {
+   flex: 3;
 }
 
 .title {
@@ -94,17 +101,29 @@ button {
 .title h2 {
    font-size: 40px;
    line-height: 40px;
+   margin: 0 20px;
 
    /* text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4); */
 }
 
-#dominos {
+.absdiv {
    position: absolute;
-   left: 0;
-   top: 0;
-   width: 1420px;
-   height: 100%;
-   z-index: -1;
+   top: 59px;
+   left: 61px;
+   width: 1297px;
+}
+
+#dominos {
+   height: 600px;
+}
+
+#arrow {
+   height: 84px;
+   z-index: 1;
+}
+
+#arrow path {
+   cursor: pointer;
 }
 
 svg {
@@ -121,11 +140,11 @@ svg {
 }
 
 .heading {
-   margin-bottom: 50px;
+   margin: 0 auto;
+   margin-top: 50px;
 }
 
 .heading h1 {
-   width: 500px;
    margin: 0 auto;
    font-weight: 700;
    font-size: 80px;
@@ -133,16 +152,16 @@ svg {
    text-align: center;
 }
 
-.heading svg {
-   width: 500px;
+.pixelpaint {
+   width: 80%;
+   transform: translateX(12%);
    height: 80px;
-   margin: 0 auto;
+   margin-bottom: 3.5vw;
 }
 
 .text {
    max-width: 920px;
-   margin: 0 auto;
-   margin-bottom: 40px;
+   margin: 0 auto 3.5vw auto;
 }
 
 .text p {
@@ -155,37 +174,58 @@ svg {
 
 #blocks {
    height: 100px;
-   width: 800px;
-   margin: 100px auto 0 auto;
+   width: 80%;
+   transform: translateX(12%);
+   margin: 5vw auto;
+}
+
+.bgshadow {
+   filter: url(../svg/filters.svg#bgshadow_d);
 }
 
 .row {
    display: flex;
    margin: 0 auto;
-}
-
-.activities {
-   width: 1000px;
-   margin-bottom: 40px;
+   justify-content: center;
+   border: 1px solid transparent;
 }
 
 .child {
    display: flex;
-   flex: 1;
+   width: 500px;
    align-items: center;
-   /* border: 1px solid; */
+   justify-content: center;
 }
 
 .child svg {
    width: 200px;
    height: 160px;
    cursor: pointer;
-   /* border: 1px solid blue; */
+}
+
+#redpiece {
+   width: 170px;
+   height: 160px;
+}
+
+#purplepiece {
+   width: 130px;
+   height: 160px;
+}
+
+#bluepiece {
+   width: 170px;
+   height: 160px;
+}
+
+#greenpiece {
+   width: 130px;
+   height: 160px;
 }
 
 .child h2 {
-   font-size: 50px;
-   /* border: 1px solid violet; */
+   font-size: 40px;
+   margin-left: 20px;
 }
 
 .activityHeading {
@@ -201,7 +241,8 @@ svg {
 }
 
 .activityHeading h1 {
-   font-size: 100px;
+   text-align: center;
+   font-size: 80px;
 }
 
 .date {
@@ -239,10 +280,11 @@ svg {
 
 #signup {
    margin: 0 auto;
-   width: 800px;
+   width: 60%;
+   border: 1px solid;
 }
 
-#signup input {
+.row input {
    all: unset;
 
    flex: 1;

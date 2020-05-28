@@ -1,0 +1,50 @@
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <defs>
+      <!--Logo Linear Gradients-->
+      <linearGradient id="logo0_linear" x1="78.227" y1="4" x2="78.227" y2="144" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#00FF85"/>
+        <stop offset="1" stop-color="#0FF" stop-opacity=".792"/>
+      </linearGradient>
+      <linearGradient id="logo1_linear" x1="78.227" y1="46.778" x2="78.227" y2="101.222" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#2DF8AB"/>
+        <stop offset="1" stop-color="#31EFD0" stop-opacity=".792"/>
+      </linearGradient>
+      <linearGradient id="logo2_linear" x1="148.845" y1="67.778" x2="148.845" y2="80.222" gradientUnits="userSpaceOnUse">
+        <stop stop-color="rgba(51, 254, 196, 1)"/>
+        <stop offset="1" stop-color="rgba(54, 254, 207, 1)"/>
+      </linearGradient>
+      
+      <!--Pixel Paint Linear Gradients-->
+      <linearGradient id="pp0_linear" x1="126" y1="51.744" x2="126" y2="76.744" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#40FFF4"/>
+        <stop offset="1" stop-color="#2bffa3"/>
+      </linearGradient>
+      <linearGradient id="pp1_linear" x1="207.456" y1="67.744" x2="207.456" y2="92.615" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#40FFF4"/>
+        <stop offset="1" stop-color="#2bffa3" stop-opacity=".742"/>
+      </linearGradient>
+      <linearGradient id="pp2_linear" x1="507.456" y1="51.744" x2="507.456" y2="76.615" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#40FFF4"/>
+        <stop offset="1" stop-color="#2bffa3" stop-opacity=".742"/>
+      </linearGradient>
+      <linearGradient id="pp3_linear" x1="414.456" y1="63.744" x2="414.456" y2="88.615" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#40FFF4"/>
+        <stop offset="1" stop-color="#2bffa3" stop-opacity=".742"/>
+      </linearGradient>
+      <linearGradient id="pp4_linear" x1="296" y1="0" x2="296" y2="60" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#40FFF4"/>
+        <stop offset="1" stop-color="#2bffa3" stop-opacity=".742"/>
+      </linearGradient>
+
+      <!--Shadows-->
+      <filter id="bgshadow_d" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="4"/>
+        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+    </defs>
+  </svg>
