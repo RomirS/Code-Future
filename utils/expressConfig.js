@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app
-.engine('pug', require('pug').__express)
+.engine('html', require('ejs').renderFile)
+.set('view engine', 'html')
 .set('views', path.resolve(__dirname, '../views'))
-.set('view engine', 'pug')
 .use(express.static(path.resolve(__dirname, '../public')))
 .use(bodyParser.urlencoded({ extended: true }))
 .use(bodyParser.json())
@@ -18,3 +18,8 @@ app
 }));
 
 module.exports = function(){ return app; }
+
+
+// .engine('pug', require('pug').__express)
+// .set('view engine', 'pug')
+
