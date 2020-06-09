@@ -4,8 +4,8 @@ var DROPDOWN = $('#dropdown').detach();
 function makeResponsive() {
     let dominoPos = -1 * (0.5 * window.innerWidth - 720);
     $('#dominos')[0].setAttribute('viewBox', dominoPos + ' 0 1298 615');
-    let arrowPos = -1 * (0.58 * window.innerWidth - 840);
-    $('#arrow')[0].setAttribute('viewBox', arrowPos + ' -10 91 98');
+    let arrowPos = -1 * (0.02 * window.innerWidth - 30);
+    $('#arrow')[0].setAttribute('viewBox', arrowPos + ' -10 91 115');
 
     var setMax = false;
     if (window.innerWidth >= 850) {
