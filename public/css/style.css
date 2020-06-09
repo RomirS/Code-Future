@@ -1,6 +1,7 @@
 body {
    font-family: 'Baloo Da 2';
    overflow-x: hidden;
+   overflow: hidden; 
 }
 
 h1 {
@@ -111,6 +112,7 @@ button {
    top: 59px;
    width: 100vw; 
    overflow-x: hidden; 
+   overflow: hidden; 
 }
 
 #dominos {
@@ -320,10 +322,22 @@ svg {
    .text p {
       font-size: 25px;
    }
+   .date p {
+      font-size: 30px;
+      line-height: 40px;
+      border-radius: 15px;
+      padding: 0 30px;
+   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media only screen and (max-width: 768px) {  
+   .date p {
+      font-size: 30px;
+      line-height: 40px;
+      border-radius: 15px;
+      padding: 0 30px;
+   }
    
 }
 
