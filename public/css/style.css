@@ -342,9 +342,18 @@ svg {
       border-radius: 15px;
    }
 
+   .child {
+      display: flex;
+      width: 300px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid;
+   }
+
    .child svg {
       width: 100px;
       height: 100px;
+      cursor: pointer;
    }
    
 }
