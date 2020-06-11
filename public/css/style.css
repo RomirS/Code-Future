@@ -109,7 +109,8 @@ button {
 .absdiv {
    position: absolute;
    top: 59px;
-   width: 100vw;
+   width: 100vw; 
+   overflow-x: hidden; 
    overflow: hidden; 
 }
 
