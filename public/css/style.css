@@ -94,24 +94,21 @@ button {
    font-size: 110px;
    line-height: 110px;
    letter-spacing: 0.09em;
-
-   /* text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.4); */
 }
 
 .title h2 {
    font-size: 40px;
    line-height: 40px;
    margin: 0 20px;
-
-   /* text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4); */
 }
 
 .absdiv {
    position: absolute;
    top: 59px;
    width: 100vw; 
+   transform: translateX(-1%);
    overflow-x: hidden; 
-   overflow: hidden; 
+   overflow: hidden;
 }
 
 #dominos {
@@ -321,12 +318,6 @@ svg {
    .text p {
       font-size: 25px;
    }
-   .date p {
-      font-size: 30px;
-      line-height: 40px;
-      border-radius: 15px;
-      padding: 0 30px;
-   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -336,6 +327,24 @@ svg {
       line-height: 40px;
       border-radius: 15px;
       padding: 0 30px;
+   }
+
+   .row input {
+      all: unset;
+   
+      width: 100%;
+      margin: 20px;
+      margin-left: 10px;
+   
+      padding: 20px;
+      font: 300 20px 'Roboto';
+      background: #F6F2F2;
+      border-radius: 15px;
+   }
+
+   .child svg {
+      width: 100px;
+      height: 100px;
    }
    
 }

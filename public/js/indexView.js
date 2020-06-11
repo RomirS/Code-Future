@@ -30,6 +30,7 @@ function makeResponsive() {
     modifyProp('.title h1', 'font-size', 12.9);
     modifyProp('.title h1', 'margin-bottom', 2.35);
     modifyProp('.title h2', 'font-size', 4.7);
+    modifyProp('.child h2', 'font-size', 4.2);
 
     toggleSidebar()
 
