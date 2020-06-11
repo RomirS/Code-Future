@@ -1,7 +1,6 @@
 body {
    font-family: 'Baloo Da 2';
    overflow-x: hidden;
-   overflow: hidden; 
 }
 
 h1 {
@@ -110,8 +109,7 @@ button {
 .absdiv {
    position: absolute;
    top: 59px;
-   width: 100vw; 
-   overflow-x: hidden; 
+   width: 100vw;
    overflow: hidden; 
 }
 
