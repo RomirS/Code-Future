@@ -280,7 +280,7 @@ svg {
    border-radius: 15px;
 }
 
-#signup input[type='submit'] {
+#signup p {
    all: unset;
 
    margin: 20px auto;
