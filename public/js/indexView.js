@@ -107,8 +107,7 @@ function toggleSidebar() {
 
 let FORM = $('#signup');
 $(document).ready(function(){
-    FORM.submit(function(e){
-        e.preventDefault();
+    FORM.submit(function() {
         var formData = {};
         FORM.find('input').each(function() {
             formData[$(this).attr('id')] = $(this).val();
