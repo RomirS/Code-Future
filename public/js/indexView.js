@@ -106,9 +106,30 @@ function toggleSidebar() {
 }
 
 let FORM = $('#signup');
+$(document).ready(function(){
+    FORM.submit(function(e){
+        e.preventDefault();
+        var formData = {};
+        FORM.find('input').each(function() {
+            formData[$(this).attr('id')] = $(this).val();
+        });
+        $.ajax({
+            type: "POST",
+            url: "submitFormData",
+            data: formData,
+            dataType: "json",
+            success: function() {
+                console.log('SUCCESS!')
+            },
+            error: function (_, _, errorMessage) {
+                console.log('Email error: ' + errorMessage);
+            }
+        });
+    });
+});
 let SUBMIT = $('#signup p');
 SUBMIT.click(function () {
-    SUBMIT[0].innerHTML = 'Thanks!';
     FORM.submit();
+    SUBMIT[0].innerHTML = 'Thanks!';
     FORM[0].reset();
 });

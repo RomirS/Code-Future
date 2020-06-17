@@ -11,10 +11,8 @@ app.get('/', index);
 app.post('/submitFormData', function(req,res) {
     var first = req.body.first;
     var email = req.body.email;
-    var actnum = req.body.actnum;
-    var date = req.body.date;
-    let heading = `${first} signed up!`;
-    let message = `${first} from ${email} is joining activity number ${actnum} on ${date}`;
+    let heading = 'You have signed up for Code Future!';
+    let message = `Hello, ${first}!\n\nWe have confirmed that you are joining Code Future this summer for our lessons on Scratch, now all that is left to do is wait for the activities to begin! We will be using this email address to update you with dates, new materials, and resources. If you would like to switch to a different email, please reply to this message with your preferred email address.\n\nWe can't wait to start coding with you this summer!\n\nWith kind regards,\nYour Code Future team\nRomir Singla, Ash Srinivasan and Edward Kang`;
     let transporter = nodeMailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -25,7 +23,7 @@ app.post('/submitFormData', function(req,res) {
         }
     });
     let mailOptions = {
-        to: 'projectcodefuture@gmail.com',
+        to: email,
         subject: heading,
         text: message
     };
@@ -33,7 +31,7 @@ app.post('/submitFormData', function(req,res) {
         if (error) {
             return console.log(error);
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
+        // console.log('Message %s sent: %s', info.messageId, info.response);
     });
     res.writeHead(301, { Location: '/' });
     res.end();
