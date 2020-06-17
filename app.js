@@ -22,17 +22,19 @@ app.post('/submitFormData', function(req,res) {
             pass: 'silicon1961'
         }
     });
-    let mailOptions = {
-        to: email,
-        subject: heading,
-        text: message
-    };
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        // console.log('Message %s sent: %s', info.messageId, info.response);
-    });
+    if (email !== '') {
+        let mailOptions = {
+            to: email,
+            subject: heading,
+            text: message
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            // console.log('Message %s sent: %s', info.messageId, info.response);
+        });
+    }
     res.writeHead(301, { Location: '/' });
     res.end();
 });

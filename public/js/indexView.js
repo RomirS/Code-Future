@@ -129,6 +129,6 @@ $(document).ready(function(){
 let SUBMIT = $('#signup p');
 SUBMIT.click(function () {
     FORM.submit();
-    SUBMIT[0].innerHTML = 'Thanks!';
+    $('#joinustext').html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
     FORM[0].reset();
 });
