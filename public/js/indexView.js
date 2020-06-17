@@ -106,29 +106,45 @@ function toggleSidebar() {
 }
 
 let FORM = $('#signup');
+let SUBMIT = $('#signup p');
+var formData = {};
+
 $(document).ready(function(){
     FORM.submit(function() {
-        var formData = {};
-        FORM.find('input').each(function() {
-            formData[$(this).attr('id')] = $(this).val();
-        });
-        $.ajax({
-            type: "POST",
-            url: "submitFormData",
-            data: formData,
-            dataType: "json",
-            success: function() {
-                console.log('SUCCESS!')
-            },
-            error: function (_, _, errorMessage) {
-                console.log('Email error: ' + errorMessage);
-            }
-        });
+        $('#joinustext').html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
+        if (formData['email'] != '') {
+            $.ajax({
+                type: "POST",
+                url: "submitFormData",
+                data: formData,
+                dataType: "json",
+                success: function() {
+                    console.log('SUCCESS!');
+                },
+                error: function (_, _, errorMessage) {
+                    console.log('Email error: ' + errorMessage);
+                }
+            });
+        }
     });
 });
-let SUBMIT = $('#signup p');
+
 SUBMIT.click(function () {
-    FORM.submit();
-    $('#joinustext').html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
-    FORM[0].reset();
+    var proceed = true;
+    FORM.find('input').each(function() {
+        let val = $(this).val();
+        let id = $(this).attr('id');
+        if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
+            proceed = false;
+            $(this).css('border', '2px solid #FF6767');
+            $('#joinustext').html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
+        } else {
+            formData[id] = val;
+            $(this).css('border', '0');
+        }
+    });
+    if (proceed) {
+        FORM.submit();
+        FORM[0].reset();
+    }
 });

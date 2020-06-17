@@ -9,7 +9,8 @@ serverConfig();
 
 app.get('/', index);
 app.post('/submitFormData', function(req,res) {
-    var first = req.body.first;
+    var name = req.body.first;
+    var first = name.indexOf(' ') > -1 ? name.substr(0, name.indexOf(' ')) : name;
     var email = req.body.email;
     let heading = 'You have signed up for Code Future!';
     let message = `Hello, ${first}!\n\nWe have confirmed that you are joining Code Future this summer for our lessons on Scratch, now all that is left to do is wait for the activities to begin! We will be using this email address to update you with dates, new materials, and resources. If you would like to switch to a different email, please reply to this message with your preferred email address.\n\nWe can't wait to start coding with you this summer!\n\nWith kind regards,\nYour Code Future team\nRomir Singla, Ash Srinivasan and Edward Kang`;
