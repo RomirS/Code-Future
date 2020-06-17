@@ -107,11 +107,13 @@ function toggleSidebar() {
 
 let FORM = $('#signup');
 let SUBMIT = $('#signup p');
+let TEXT = $('#joinustext');
 var formData = {};
 
 $(document).ready(function(){
     FORM.submit(function() {
-        $('#joinustext').html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
+        TEXT.html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
+        TEXT.css('color', '#88FF75');
         if (formData['email'] != '') {
             $.ajax({
                 type: "POST",
@@ -137,7 +139,8 @@ SUBMIT.click(function () {
         if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
             proceed = false;
             $(this).css('border', '2px solid #FF6767');
-            $('#joinustext').html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
+            TEXT.html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
+            TEXT.css('color', '#FF6767')
         } else {
             formData[id] = val;
             $(this).css('border', '0');
