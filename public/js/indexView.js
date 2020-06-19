@@ -110,10 +110,32 @@ let SUBMIT = $('#signup p');
 let TEXT = $('#joinustext');
 var formData = {};
 
-$(document).ready(function(){
-    //Not accepting any more responses
-    TEXT.html('We\'re sorry, but we have reached our maximum capacity for signups. As much as we want to, we simply cannot accept more responses, but please stay tuned for future activities!');
+SUBMIT.click(function () {
+    //No more responses
+    TEXT.css('color', '#FF6767');
 
+    //Accepting responses
+    // var proceed = true;
+    // FORM.find('input').each(function() {
+    //     let val = $(this).val();
+    //     let id = $(this).attr('id');
+    //     if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
+    //         proceed = false;
+    //         $(this).css('border', '2px solid #FF6767');
+    //         TEXT.html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
+    //         TEXT.css('color', '#FF6767')
+    //     } else {
+    //         formData[id] = val;
+    //         $(this).css('border', '0');
+    //     }
+    // });
+    // if (proceed) {
+    //     FORM.submit();
+    //     FORM[0].reset();
+    // }
+});
+
+$(document).ready(function(){
     FORM.submit(function() {
         TEXT.html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
         TEXT.css('color', '#88FF75');
@@ -134,26 +156,24 @@ $(document).ready(function(){
     });
 });
 
-SUBMIT.click(function () {
-    //No more responses
-    TEXT.css('color', '#FF6767');
 
-    // var proceed = true;
-    // FORM.find('input').each(function() {
-    //     let val = $(this).val();
-    //     let id = $(this).attr('id');
-    //     if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
-    //         proceed = false;
-    //         $(this).css('border', '2px solid #FF6767');
-    //         TEXT.html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
-    //         TEXT.css('color', '#FF6767')
-    //     } else {
-    //         formData[id] = val;
-    //         $(this).css('border', '0');
-    //     }
-    // });
-    // if (proceed) {
-    //     FORM.submit();
-    //     FORM[0].reset();
-    // }
+//No more responses
+TEXT.html('We\'re sorry, but we have reached our maximum capacity for signups. As much as we want to, we simply cannot accept more responses, but please stay tuned for future activities!');
+$('.popup').fadeIn(500);
+$('.overlay').fadeIn(500);
+$('.popup h2').click(function() {
+    $('.popup').fadeOut(400);
+    $('.overlay').fadeOut(400);
+})
+
+var deactivated = false;
+$(document).mouseup(function(e) 
+{
+    if (!$('.popup').is(e.target) && $('.popup').has(e.target).length === 0 && !deactivated) 
+    {
+        $('.popup').fadeOut(400);
+        $('.overlay').fadeOut(400);
+        deactivated = true;
+    }
 });
+    

@@ -21,6 +21,52 @@ button {
    border-radius: 10px;
 }
 
+.overlay {
+   display: none;
+   position: fixed;
+   width: 110%;
+   height: 110%;
+   left: -5%;
+   top: -5%;
+   background: rgba(175, 175, 175, 0.877);
+   z-index: 3;
+}
+
+.popup {
+   display: none;
+   position: fixed;
+   top: 15%;
+   left: 24%;
+   width: 40%;
+   background: white;
+   z-index: 4;
+   border-radius: 20px;
+   padding: 6vw;
+}
+
+.popup h1 {
+   font-size: 40px;
+   margin-bottom: 0.8vw;
+}
+
+.popup p {
+   font-size: 25px;
+}
+
+.popup h2 {
+   position: absolute;
+   top: 5%;
+   right: 10%;
+   color: black;
+   font-weight: bold;
+   font-size: 3vw;
+   cursor: pointer;
+}
+
+.popup h2:hover {
+   color: rgba(48, 253, 157, 0.877);
+}
+
 .sidebar {
    position: fixed;
    top: 35%;
@@ -368,12 +414,37 @@ svg {
       height: 100px;
       cursor: pointer;
    }
+
+   .popup {
+      top: 18%;
+      left: 10%;
+      width: 60%;
+      padding: 8vw;
+   }
+
+   .popup h1 {
+      font-size: 20px;
+   }
+   
+   .popup p {
+      font-size: 12px;
+   }
+
+   .popup h2 {
+      font-size: 20px;
+   }
    
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media only screen and (max-width: 992px) {  
-
+   .popup h1 {
+      font-size: 30px;
+   }
+   
+   .popup p {
+      font-size: 18px;
+   }
 }
 
 /* Large devices (desktops, 992px and up) */
