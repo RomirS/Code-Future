@@ -385,6 +385,18 @@ svg {
       background: #F6F2F2;
       border-radius: 15px;
    }
+
+   .popup {
+      top: 8%;
+   }
+
+   .popup h1 {
+      font-size: 12px;
+   }
+   
+   .popup p {
+      font-size: 10px;
+   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
