@@ -387,7 +387,7 @@ svg {
    }
 
    .popup {
-      top: 8%;
+      top: 2%;
    }
 
    .popup h1 {
@@ -428,18 +428,18 @@ svg {
    }
 
    .popup {
-      top: 18%;
+      top: 12%;
       left: 10%;
       width: 60%;
       padding: 8vw;
    }
 
    .popup h1 {
-      font-size: 20px;
+      font-size: 10px;
    }
    
    .popup p {
-      font-size: 12px;
+      font-size: 10px;
    }
 
    .popup h2 {
