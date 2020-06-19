@@ -112,7 +112,7 @@ var formData = {};
 
 $(document).ready(function(){
     //Not accepting any more responses
-    TEXT.html('Sorry, but we have reached our maximum capacity of signups. As much as we want to, we simply cannot accept any more responses :(');
+    TEXT.html('We\'re sorry, but we have reached our maximum capacity for signups. As much as we want to, we simply cannot accept more responses, but please stay tuned for future activities!');
 
     FORM.submit(function() {
         TEXT.html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
