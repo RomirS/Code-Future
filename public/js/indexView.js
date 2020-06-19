@@ -111,6 +111,9 @@ let TEXT = $('#joinustext');
 var formData = {};
 
 $(document).ready(function(){
+    //Not accepting any more responses
+    TEXT.html('Sorry, but we have reached our maximum capacity of signups. As much as we want to, we simply cannot accept any more responses :(');
+
     FORM.submit(function() {
         TEXT.html('Thanks for your submission! If you want to register another student, please fill out the form again (no need to repeat your email).');
         TEXT.css('color', '#88FF75');
@@ -132,22 +135,25 @@ $(document).ready(function(){
 });
 
 SUBMIT.click(function () {
-    var proceed = true;
-    FORM.find('input').each(function() {
-        let val = $(this).val();
-        let id = $(this).attr('id');
-        if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
-            proceed = false;
-            $(this).css('border', '2px solid #FF6767');
-            TEXT.html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
-            TEXT.css('color', '#FF6767')
-        } else {
-            formData[id] = val;
-            $(this).css('border', '0');
-        }
-    });
-    if (proceed) {
-        FORM.submit();
-        FORM[0].reset();
-    }
+    //No more responses
+    TEXT.css('color', '#FF6767');
+
+    // var proceed = true;
+    // FORM.find('input').each(function() {
+    //     let val = $(this).val();
+    //     let id = $(this).attr('id');
+    //     if ( (id == 'email' && val !== '' && val.indexOf('@') == -1) || (id != 'email' && val == '') ) {
+    //         proceed = false;
+    //         $(this).css('border', '2px solid #FF6767');
+    //         TEXT.html('Looks like you are missing an entry or the email you have entered is invalid. Please fill out the needed information.');
+    //         TEXT.css('color', '#FF6767')
+    //     } else {
+    //         formData[id] = val;
+    //         $(this).css('border', '0');
+    //     }
+    // });
+    // if (proceed) {
+    //     FORM.submit();
+    //     FORM[0].reset();
+    // }
 });
